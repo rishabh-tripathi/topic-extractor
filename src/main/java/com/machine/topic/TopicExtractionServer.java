@@ -1,6 +1,7 @@
 package com.machine.topic;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
+import com.machine.topic.resource.TopicResource;
 import io.dropwizard.Application;
 import io.dropwizard.jdbi.DBIFactory;
 import io.dropwizard.setup.Bootstrap;
@@ -36,8 +37,6 @@ public class TopicExtractionServer extends Application<TopicExtractionConfigurat
         injector = Guice.createInjector(topicExtractionModule);
 
         // Register the resources
-        environment.jersey().register(injector.getInstance(DiscountEngineResource.class));
-        environment.jersey().register(injector.getInstance(PromotionResource.class));
-        environment.jersey().register(injector.getInstance(OfferResource.class));
+        environment.jersey().register(injector.getInstance(TopicResource.class));
     }
 }

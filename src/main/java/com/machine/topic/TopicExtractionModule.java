@@ -4,6 +4,7 @@ import com.google.inject.AbstractModule;
 import com.machine.topic.Util.TEUtil;
 import com.machine.topic.dal.store.DataStore;
 import com.machine.topic.dal.store.MySqlStore;
+import com.machine.topic.resource.TopicResource;
 import io.dropwizard.setup.Environment;
 import org.skife.jdbi.v2.DBI;
 
@@ -28,16 +29,13 @@ public class TopicExtractionModule extends AbstractModule {
         bind(TopicExtractionConfiguration.class).toInstance(configuration);
 
         // Bind Resources
-        bind(DiscountEngineResource.class).asEagerSingleton();
-        bind(PromotionResource.class).asEagerSingleton();
-        bind(OfferResource.class).asEagerSingleton();
+        bind(TopicResource.class).asEagerSingleton();
 
         // Binding Util
         bind(TEUtil.class).asEagerSingleton();
 
         // Bind Database and DAOs
         bind(DBI.class).toInstance(database);
-        bind(PromotionDAO.class).toInstance(database.onDemand(PromotionDAO.class));
 
         // Bind DataStore
         bind(DataStore.class).to(MySqlStore.class);

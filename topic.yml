@@ -1,0 +1,84 @@
+#https://dropwizard.github.io/dropwizard/manual/core.html#logging
+logging:
+  level: INFO
+  appenders:
+  - type: console
+  - type: file
+    # The file to which current statements will be logged.
+    currentLogFilename: ./logs/de-service.log
+
+    # When the log file rotates, the archived log will be renamed to this and gzipped. The
+    # %d is replaced with the previous day (yyyy-MM-dd). Custom rolling windows can be created
+    # by passing a SimpleDateFormat-compatible format as an argument: "%d{yyyy-MM-dd-hh}".
+    archivedLogFilenamePattern: ./logs/de-service-%d.log.gz
+
+    # The number of archived files to keep.
+    archivedFileCount: 5
+
+    # The timezone used to format dates. HINT: USE THE DEFAULT, UTC.
+    timeZone: IST
+
+# You can change the default ports here
+server:
+  type: Default
+  applicationConnectors:
+    - type: http
+      port: 7070
+  adminConnectors:
+    - type: http
+      port: 7071
+  requestLog:
+    appenders:
+      - type: console
+      - type: file
+        # The file to which current statements will be logged.
+        currentLogFilename: ./logs/de-service.log
+        archivedLogFilenamePattern: ./logs/de-service-%d.log.gz
+        archivedFileCount: 5
+        timeZone: IST
+
+serviceName : "discount-engine-service"
+
+database:
+  # the nodeName of your JDBC driver
+  driverClass: com.mysql.jdbc.Driver
+
+  # the username
+  user: root
+
+  # the password
+  password:
+
+  # the JDBC URL
+  url: jdbc:mysql://localhost/topic
+
+  # any properties specific to your JDBC driver:
+  properties:
+    charSet: UTF-8
+
+  # the maximum amount of time to wait on an empty pool before throwing an exception
+  maxWaitForConnection: 1s
+
+  # the SQL query to run when validating a connection's liveness
+  validationQuery: "/* MyService Health Check */ SELECT 1"
+
+  # the timeout before a connection validation queries fail
+  validationQueryTimeout: 3s
+
+  # the minimum number of connections to keep open
+  minSize: 8
+
+  # the maximum number of connections to keep open
+  maxSize: 32
+
+  # whether or not idle connections should be validated
+  checkConnectionWhileIdle: false
+
+  # the amount of time to sleep between runs of the idle connection validation, abandoned cleaner and idle pool resizing
+  evictionInterval: 10s
+
+  # the minimum amount of time an connection must sit idle in the pool before it is eligible for eviction
+  minIdleTime: 1 minute
+
+  checkConnectionOnBorrow: true
+

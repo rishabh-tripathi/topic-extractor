@@ -1,7 +1,12 @@
 /Users/rishabh.tripathi/dev/topic-extractor/src/main/java/com/machine/topic/TopicExtractionConfiguration.java
+/Users/rishabh.tripathi/dev/topic-extractor/src/main/java/com/machine/topic/model/EntityMatch.java
+/Users/rishabh.tripathi/dev/topic-extractor/src/main/java/com/machine/topic/resource/TopicResource.java
+/Users/rishabh.tripathi/dev/topic-extractor/src/main/java/com/machine/topic/exceptions/FailedResponseException.java
 /Users/rishabh.tripathi/dev/topic-extractor/src/main/java/com/machine/topic/TopicExtractionModule.java
 /Users/rishabh.tripathi/dev/topic-extractor/src/main/java/com/machine/topic/dal/store/MySqlStore.java
+/Users/rishabh.tripathi/dev/topic-extractor/src/main/java/com/machine/topic/service/TopicService.java
 /Users/rishabh.tripathi/dev/topic-extractor/src/main/java/com/machine/topic/TopicExtractionServer.java
 /Users/rishabh.tripathi/dev/topic-extractor/src/main/java/com/machine/topic/dal/store/DataStore.java
 /Users/rishabh.tripathi/dev/topic-extractor/src/main/java/com/machine/topic/common/Constants.java
+/Users/rishabh.tripathi/dev/topic-extractor/src/main/java/com/machine/topic/model/Entity.java
 /Users/rishabh.tripathi/dev/topic-extractor/src/main/java/com/machine/topic/Util/TEUtil.java

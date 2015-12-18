@@ -37,7 +37,7 @@ server:
         archivedFileCount: 5
         timeZone: IST
 
-serviceName : "discount-engine-service"
+serviceName : "topic-extraction-service"
 
 database:
   # the nodeName of your JDBC driver
@@ -50,7 +50,7 @@ database:
   password:
 
   # the JDBC URL
-  url: jdbc:mysql://localhost/topic
+  url: jdbc:mysql://localhost/oa_dev
 
   # any properties specific to your JDBC driver:
   properties:
@@ -81,4 +81,8 @@ database:
   minIdleTime: 1 minute
 
   checkConnectionOnBorrow: true
+
+
+calisUrl: "https://api.thomsonreuters.com/permid/calais"
+calisAuth: "izzyK1YMLu2VV7PBzQt8sDDiaDP9Jqxj"
 

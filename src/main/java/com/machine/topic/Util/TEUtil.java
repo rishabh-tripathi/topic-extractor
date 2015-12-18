@@ -24,4 +24,8 @@ public class TEUtil {
         DateFormat df = new SimpleDateFormat("yyyy-mm-dd HH:mm:ss");
         return df.format(date);
     }
+
+    public String sanitizeEntityName(String name) {
+        return name.toLowerCase().replaceAll(" ","_").replaceAll("[^A-Za-z0-9_]", "");
+    }
 }
